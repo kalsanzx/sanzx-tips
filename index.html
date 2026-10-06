@@ -3,89 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SanZX Usaha</title>
+
+<title>SanZX Usaha — Ide & Kalkulator Bisnis</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#f3f7f4;
-  color:#17221b;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7f6;
+  color:#18231d;
 }
 
 header{
-  background:#173d2a;
+  background:linear-gradient(135deg,#102c1e,#247545);
   color:white;
-  text-align:center;
-  padding:30px 15px;
+  padding:22px 18px 45px;
 }
 
-header h1{
-  margin:0;
-  font-size:30px;
+.top{
+  max-width:1050px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
+
+.badge{
+  background:#ffffff22;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+.hero{
+  max-width:1050px;
+  margin:45px auto 0;
+}
+
+.hero h1{
+  font-size:42px;
+  line-height:1.1;
+  margin:0 0 15px;
+}
+
+.hero p{
+  max-width:650px;
+  font-size:17px;
+  line-height:1.6;
+  opacity:.9;
+}
+
+.search{
+  max-width:650px;
+  margin-top:25px;
+  display:flex;
+  background:white;
+  padding:6px;
+  border-radius:14px;
+}
+
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:14px;
+  font-size:15px;
+}
+
+.search button{
+  border:0;
+  background:#247545;
+  color:white;
+  padding:0 20px;
+  border-radius:10px;
+  font-weight:bold;
 }
 
 main{
-  max-width:600px;
+  max-width:1050px;
   margin:auto;
-  padding:20px;
+  padding:35px 18px;
 }
 
-.card{
+.section-title{
+  margin-bottom:18px;
+}
+
+.section-title h2{
+  margin-bottom:5px;
+}
+
+.section-title p{
+  color:#68736c;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:13px;
+}
+
+.category{
   background:white;
-  padding:20px;
-  margin-bottom:20px;
-  border-radius:18px;
-  box-shadow:0 4px 15px #0001;
+  padding:18px 12px;
+  border-radius:15px;
+  text-align:center;
+  text-decoration:none;
+  color:#18231d;
+  box-shadow:0 3px 12px #0000000d;
+  transition:.2s;
 }
 
-h2{
-  margin-top:0;
+.category:hover{
+  transform:translateY(-3px);
+}
+
+.icon{
+  font-size:30px;
+  display:block;
+  margin-bottom:8px;
+}
+
+.calculator{
+  margin-top:40px;
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 5px 20px #00000010;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
 }
 
 label{
   display:block;
-  margin-top:15px;
   font-weight:bold;
+  margin-bottom:7px;
 }
 
-input{
+input[type=number]{
   width:100%;
   padding:13px;
-  margin-top:7px;
-  box-sizing:border-box;
-  border:1px solid #ccc;
+  border:1px solid #d5ddd8;
   border-radius:10px;
   font-size:16px;
 }
 
-button{
+.calculate{
   width:100%;
-  margin-top:20px;
+  margin-top:18px;
   padding:14px;
   border:0;
-  border-radius:10px;
+  border-radius:11px;
   background:#247545;
   color:white;
-  font-size:17px;
+  font-size:16px;
   font-weight:bold;
 }
 
-.hasil{
-  background:#e1f2e6;
-  padding:15px;
-  border-radius:12px;
+.result{
   margin-top:20px;
+  padding:18px;
+  background:#e6f4ea;
+  border-radius:13px;
+  line-height:1.7;
 }
 
-.hasil p{
-  font-size:17px;
+.articles{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+}
+
+.article{
+  background:white;
+  padding:20px;
+  border-radius:17px;
+  box-shadow:0 3px 14px #0000000d;
+}
+
+.article .tag{
+  color:#247545;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.article h3{
+  margin:9px 0;
+}
+
+.article p{
+  color:#68736c;
+  line-height:1.5;
 }
 
 footer{
+  margin-top:40px;
+  background:#102c1e;
+  color:white;
   text-align:center;
-  padding:25px;
-  color:#66736a;
+  padding:30px 18px;
+}
+
+footer p{
+  color:#c8d3cc;
+}
+
+@media(max-width:700px){
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .top{
+    align-items:flex-start;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .search button{
+    padding:0 14px;
+  }
 }
 </style>
 </head>
@@ -93,74 +250,303 @@ footer{
 <body>
 
 <header>
-  <h1>SanZX Usaha 💰</h1>
-  <p>Kalkulator sederhana untuk menghitung keuntungan usaha</p>
+
+<div class="top">
+  <div class="logo">SanZX Usaha 🚀</div>
+  <div class="badge">2026 → 2027</div>
+</div>
+
+<div class="hero">
+
+<h1>Temukan ide.<br>Hitung modal. Mulai usaha.</h1>
+
+<p>
+Panduan sederhana untuk berbagai jenis usaha,
+mulai dari warung, cafe, konter, jasa, toko,
+hingga bisnis online.
+</p>
+
+<div class="search">
+<input type="text" id="searchInput"
+placeholder="Cari usaha atau artikel...">
+<button onclick="cari()">Cari</button>
+</div>
+
+</div>
+
 </header>
 
 <main>
 
-<div class="card">
-  <h2>📊 Kalkulator Keuntungan</h2>
+<section>
 
-  <label>Modal Awal (Rp)</label>
-  <input type="number" id="modal" placeholder="Contoh: 500000">
-
-  <label>Jumlah Produk Terjual</label>
-  <input type="number" id="jumlah" placeholder="Contoh: 100">
-
-  <label>Harga Jual per Produk (Rp)</label>
-  <input type="number" id="harga" placeholder="Contoh: 10000">
-
-  <button onclick="hitung()">Hitung Keuntungan</button>
-
-  <div class="hasil" id="hasil">
-    <p>Masukkan data usaha kamu lalu tekan tombol hitung.</p>
-  </div>
+<div class="section-title">
+<h2>🔥 Pilih Kategori Usaha</h2>
+<p>Temukan informasi sesuai jenis usaha kamu.</p>
 </div>
 
-<div class="card">
-  <h2>💡 Tentang SanZX Usaha</h2>
-  <p>
-    Gunakan kalkulator ini untuk memperkirakan omzet,
-    keuntungan, dan persentase keuntungan dari usaha kamu.
-  </p>
-  <p>
-    Hasil hanya berupa perkiraan berdasarkan data yang kamu masukkan.
-  </p>
+<div class="categories">
+
+<a class="category" href="#artikel">
+<span class="icon">🏪</span>Warung & Grosir
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🍜</span>Cafe & Kuliner
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">📱</span>Konter & Teknologi
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">👕</span>Fashion
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🏠</span>Jasa Rumah
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🚗</span>Otomotif
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🌱</span>Pertanian
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🐟</span>Peternakan & Ikan
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">💻</span>Online & Kreator
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">📦</span>Toko & Dagang
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">💇</span>Salon & Barbershop
+</a>
+
+<a class="category" href="#artikel">
+<span class="icon">🧺</span>Laundry
+</a>
+
 </div>
+
+</section>
+
+
+<section class="calculator" id="kalkulator">
+
+<div class="section-title">
+<h2>🧮 Kalkulator Keuntungan</h2>
+<p>Hitung perkiraan keuntungan usaha kamu.</p>
+</div>
+
+<div class="form-grid">
+
+<div>
+<label>Modal (Rp)</label>
+<input type="number" id="modal" placeholder="500000">
+</div>
+
+<div>
+<label>Jumlah Terjual</label>
+<input type="number" id="jumlah" placeholder="100">
+</div>
+
+<div>
+<label>Harga Jual (Rp)</label>
+<input type="number" id="harga" placeholder="10000">
+</div>
+
+</div>
+
+<button class="calculate" onclick="hitung()">
+Hitung Keuntungan
+</button>
+
+<div class="result" id="hasil">
+Masukkan data usaha lalu tekan tombol hitung.
+</div>
+
+</section>
+
+
+<section id="artikel">
+
+<div class="section-title">
+<h2>📚 Artikel & Ide Usaha</h2>
+<p>Informasi sederhana untuk membantu kamu memulai dan mengembangkan usaha.</p>
+</div>
+
+<div class="articles">
+
+<article class="article">
+<div class="tag">WARUNG & GROSIR</div>
+<h3>Cara Menghitung Keuntungan Warung</h3>
+<p>
+Pelajari cara mencatat modal, harga beli,
+harga jual, stok, dan keuntungan.
+</p>
+</article>
+
+<article class="article">
+<div class="tag">CAFE & KULINER</div>
+<h3>Menghitung Harga Jual Makanan</h3>
+<p>
+Kenali biaya bahan, kemasan, dan biaya lainnya
+sebelum menentukan harga jual.
+</p>
+</article>
+
+<article class="article">
+<div class="tag">KONTER</div>
+<h3>Ide Usaha Konter HP</h3>
+<p>
+Pelajari berbagai sumber pendapatan seperti
+pulsa, paket data, aksesoris, dan jasa.
+</p>
+</article>
+
+<article class="article">
+<div class="tag">ONLINE</div>
+<h3>Mulai Jualan Online</h3>
+<p>
+Kenali produk, target pembeli, harga,
+dan cara menghitung keuntungan.
+</p>
+</article>
+
+<article class="article">
+<div class="tag">JASA</div>
+<h3>Ide Usaha Jasa Modal Kecil</h3>
+<p>
+Berbagai contoh usaha jasa yang bisa
+dipelajari sesuai kemampuan.
+</p>
+</article>
+
+<article class="article">
+<div class="tag">PERTANIAN</div>
+<h3>Menghitung Modal Usaha Pertanian</h3>
+<p>
+Catat biaya bibit, pupuk, perawatan,
+hingga hasil penjualan.
+</p>
+</article>
+
+</div>
+
+</section>
 
 </main>
 
+
 <footer>
-  © 2026 SanZX Usaha
+
+<strong>SanZX Usaha</strong>
+
+<p>
+Temukan ide. Hitung modal. Mulai usaha.
+</p>
+
+<p>© 2026 SanZX Usaha</p>
+
 </footer>
 
+
 <script>
+
 function rupiah(angka){
-  return new Intl.NumberFormat('id-ID').format(angka);
+return new Intl.NumberFormat('id-ID').format(angka);
 }
 
 function hitung(){
 
-  let modal = Number(document.getElementById("modal").value);
-  let jumlah = Number(document.getElementById("jumlah").value);
-  let harga = Number(document.getElementById("harga").value);
+let modal =
+Number(document.getElementById("modal").value);
 
-  let omzet = jumlah * harga;
-  let keuntungan = omzet - modal;
+let jumlah =
+Number(document.getElementById("jumlah").value);
 
-  let persen = 0;
+let harga =
+Number(document.getElementById("harga").value);
 
-  if(modal > 0){
-    persen = (keuntungan / modal) * 100;
-  }
+if(modal <= 0 || jumlah <= 0 || harga <= 0){
 
-  document.getElementById("hasil").innerHTML = `
-    <p>💵 <b>Omzet:</b> Rp ${rupiah(omzet)}</p>
-    <p>📈 <b>Keuntungan:</b> Rp ${rupiah(keuntungan)}</p>
-    <p>📊 <b>Persentase:</b> ${persen.toFixed(2)}%</p>
-  `;
+document.getElementById("hasil").innerHTML =
+"⚠️ Silakan isi semua data terlebih dahulu.";
+
+return;
 }
+
+let omzet = jumlah * harga;
+
+let keuntungan = omzet - modal;
+
+let persen = (keuntungan / modal) * 100;
+
+document.getElementById("hasil").innerHTML =
+
+"💵 <b>Omzet:</b> Rp " + rupiah(omzet) +
+"<br>📈 <b>Keuntungan:</b> Rp " + rupiah(keuntungan) +
+"<br>📊 <b>Persentase keuntungan:</b> " +
+persen.toFixed(2) + "%";
+
+}
+
+
+function cari(){
+
+let kata =
+document.getElementById("searchInput").value
+.toLowerCase();
+
+if(kata.trim() === ""){
+
+alert("Masukkan kata yang ingin dicari.");
+
+return;
+}
+
+let artikel =
+document.querySelectorAll(".article");
+
+let ditemukan = false;
+
+artikel.forEach(function(item){
+
+if(item.innerText.toLowerCase().includes(kata)){
+
+item.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+item.style.outline =
+"3px solid #247545";
+
+ditemukan = true;
+
+}
+
+});
+
+if(!ditemukan){
+
+alert(
+"Artikel belum ditemukan. Nanti kita akan terus menambah artikel SanZX Usaha."
+);
+
+}
+
+}
+
 </script>
 
 </body>
